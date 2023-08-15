@@ -14,14 +14,26 @@ import OrganizationsColleague from './conponents/OrganizationsColleague.js'
 import OrganizationsResponsible from './conponents/OrganizationsResponsible.js';
 import MainPage from "./conponents/MainPage.js";
 import Definitions from "./conponents/Definitions.js";
+import Layout from "./Layout.js";
+import Background from "./Background.js";
 function App() {
   return (
     <>
       <Routes>
       {/* <Route index element={} /> */}
-        <Route path="/" element={<Home />}>
+        <Route path="/" element={<Layout />}>
+            <Route index element={<Background />} />
+            <Route path="/conditions" element={<Conditions />} />
+          <Route path="/definitions" element={<Definitions />} />
+          <Route path="/conditions/:id" element={<Condition />} />
+            <Route path="/conditions/processes/:id" element={<ProcessesNew />} />
+            <Route path="/conditions/process/:id" element={<Process />} />
+            <Route path="/conditions/response/:id" element={<OrganizationsResponsible />} />
+            <Route path="/conditions/colleague/:id" element={<OrganizationsColleague />} />
+          <Route path="/conditions/legal/:id" element={<LegalIssues />} />
+          <Route path="/definition" element={<Definitions/>}/>
         </Route>
-        <Route path="/manipage" element={<ConditionsLayout />}>
+        {/* <Route path="/manipage" element={<ConditionsLayout />}>
           <Route index element={<MainPage />} />
           <Route path="/manipage/conditions" element={<Conditions />} />
           <Route path="/manipage/definitions" element={<Definitions/>}/>
@@ -33,7 +45,7 @@ function App() {
           <Route path="/manipage/conditions/Response/:id" element={<OrganizationsResponsible />} />
           <Route path="/manipage/conditions/Colleague/:id" element={<OrganizationsColleague />} />
 
-        </Route>
+        </Route> */}
       </Routes>
     
     

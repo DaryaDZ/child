@@ -1,11 +1,26 @@
-import React from "react";
 import { Link, useParams } from "react-router-dom";
 import list from './db.js';
-import {AiOutlineArrowLeft} from 'react-icons/ai'
+import React, { useState} from "react";
+import logoPazhoheshgal from "./Images/logoP.png";
+import { AiFillHome,AiOutlineClose } from "react-icons/ai";
+import { MdOutlineDangerous } from "react-icons/md";
+import { GiOpenBook,GiHamburgerMenu } from "react-icons/gi";
+import { BsFillPersonFill } from "react-icons/bs";
+import { BiSolidPhoneCall } from "react-icons/bi";
+import { AiOutlineSearch } from "react-icons/ai";
+// import { Link } from "react-router-dom";
+
 const Navbar = () => {
-  
-  let { id } = useParams();
-  const conditionName = list.find(item=>item.id ==id);
+  const [nav, setNav] = useState(false);
+  const [search,setSeach]=useState(false)
+  const handleNav = () => {
+    setNav(!nav);
+  };
+  const openSeachBox = () => {
+    setSeach(!search)
+  }
+  // let { id } = useParams();
+  // const conditionName = list.find(item=>item.id ==id);
   // const list = [
   //   {
   //     id: uuidv4(),
@@ -90,44 +105,115 @@ const Navbar = () => {
     // const [isOpen, setIsopen] = useState(false);
   return (
     <>
-      {
-        conditionName  ? <div className="flex text-right h-40 w-full justify-between items-center  p-4  z-10 text-white bg-blue-500">
-        <div>
-            {/* <h5> وضعیت مخاطره آمیز مورد نظر را انتخاب کنید </h5> */}
-          </div>
-          <div className="font-bold text-sx items-center justify-center hidden md:flex">
-            <h5>{conditionName.name}</h5>
-          </div>
-      
-          <div className="md:hidden z-10 flex flex-row justify-between w-full">
-          <div className="flex ltr w-[40%] items-center">
-              <Link to="/">
-              <AiOutlineArrowLeft size={30}/>
-              </Link>
-          </div>
-        <div className="font-bold text-sm items-center justify-center flex text-justify rtl w-full">
-              <h6>{conditionName.name}</h6>
-            </div>
-         
+          <div className="w-full bg-[#F0F0F0] sticky h-20  justify-between items-center shadow-lg	md:flex hidden">
+        <div className="flex items-center justify-center">
+          <img src={logoPazhoheshgal} alt="" className="w-22 h-20 ml-3 mt-3 mb-3 " />
+{          search ? <></>:<AiOutlineSearch size={30} style={{ color: "#105251", marginLeft: "5", cursor: "pointer" }} onClick={openSeachBox} />
+}          {search ? <>
+          
+            <div className=" flex  w-full  justify-center items-center  ">
+          <input
+            className="border-2 w-full rounded-lg relative text-right p-2 focus:outline-none "
+            placeholder="جستجو"
+          />
+          <button className="absolute w-12 h-12 left-24 rounded justify-center items-center" onClick={openSeachBox} >
+            <AiOutlineSearch size={30} style={{ color: "#105251" }} />
+          </button>
+        </div> 
+          
+          </> : <></>}
         </div>
+        <div className="flex items-center m-5 font-Vazirmatn text-xl font-bold  text-[#105251]">
+          <li className="m-3 list-none cursor-pointer flex items-center  justify-center  hover:border-b-2 border-b-[#105251]">
+            تماس با ما
+            <BiSolidPhoneCall style={{ color: "#105251", marginLeft: "5" }} />
+          </li>
+          <li className="m-3 list-none cursor-pointer flex items-center  justify-center  hover:border-b-2 border-b-[#105251]">
+            درباره ما
+            <BsFillPersonFill style={{ color: "#105251", marginLeft: "5" }} />
+          </li>
+          <Link to="/definitions">
+            <li className="m-3 list-none cursor-pointer flex items-center  justify-center  hover:border-b-2 border-b-[#105251]">
+              تعاریف عمومی
+              <GiOpenBook style={{ color: "#105251", marginLeft: "5" }} />
+            </li>
+          </Link>
+          <Link to="/conditions">
+            <li className="m-3 list-none cursor-pointer flex items-center justify-center hover:border-b-2 border-b-[#105251] ">
+              وضعیت های مخاطره آمیز
+              <MdOutlineDangerous
+                style={{ color: "#105251", marginLeft: "5" }}
+              />
+            </li>
+          </Link>
+
+          <Link to="/">
+            <li className="m-3 list-none cursor-pointer flex items-center  justify-center  hover:border-b-2 border-b-[#105251]">
+              خانه
+              <AiFillHome style={{ color: "#105251", marginLeft: "5" }} />
+            </li>
+          </Link>
         </div>
-      : <div className="flex text-right w-full h-44 justify-between items-center  p-4  z-10 text-white bg-blue-500">
-      <div>
-          {/* <h5> وضعیت مخاطره آمیز مورد نظر را انتخاب کنید </h5> */}
-        </div>
-        <div className="font-bold text-sx hidden md:flex">
-          <h5> وضعیت های  مخاطره آمیز </h5>
-        </div>
+      </div>
+
+
+      <div onClick={handleNav} className="md:hidden z-10 rtl p-2 ">
+        {nav ? <AiOutlineClose size={25} className="text-black"/> : <GiHamburgerMenu size={25} style={{color:"#105251"}}/>}
+      </div>
+      <div  onClick={handleNav}
+        className={
+          nav
+            ? "absolute left-0 top-0 w-full bg-gray-100/90 px-4 flex flex-col text-black font-Vazirmatn text-2xl"
+            : "absolute left-[-100%] "
+        }
+        // className="h-[80%] bg-[#F0F0F0] w-full flex flex-col items-center justify-center text-3xl font-Vazirmatn"
+      >
+
+
+        <ul >
+        <img src={logoPazhoheshgal} alt="" className="w-22 h-20 ml-3 mt-3 mb-3 " />
+
+          <Link to="/">
+            <li className="m-3 list-none cursor-pointer flex items-center  justify-center ">
+              خانه
+              <AiFillHome style={{ color: "#105251", marginLeft: "5" }} />
+            </li>
+          </Link>
+          <hr className="hr" style={{width:"100%"}}/>
+          <Link to="/conditions">
+            <li className="m-3 list-none cursor-pointer flex items-center justify-center  ">
+
+              وضعیت های مخاطره آمیز
+              <MdOutlineDangerous
+                style={{ color: "#105251", marginLeft: "5" }}
+              />
+            </li>
+          </Link>
+          <hr className="hr" style={{width:"100%"}}/>
+          <Link to="/definitions">
+            <li className="m-3 list-none cursor-pointer flex items-center  justify-center ">
+              تعاریف عمومی
+              <GiOpenBook style={{ color: "#105251", marginLeft: "5" }} />
+            </li>
+          </Link>
+          <hr className="hr" style={{width:"100%"}}/>
+          <li className="m-3 list-none cursor-pointer flex items-center  justify-center">
+            {/* <hr className="hr" /> */}
+            درباره ما
+            <BsFillPersonFill style={{ color: "#105251", marginLeft: "5" }} />
+          </li>
+            <hr className="hr" style={{width:"100%"}}/>
+          <li className="m-3 list-none cursor-pointer flex items-center  justify-center ">
+            تماس با ما
+            <BiSolidPhoneCall style={{ color: "#105251", marginLeft: "5" }} />
+          
+          </li>
     
-         <div className="md:hidden z-10">
-      <div className="font-bold text-sx items-center justify-center flex">
-          <h6>وضعیت های  مخاطره آمیز </h6>
-              </div>
-     
+        </ul>
+       
       </div>
-      </div>
-        
-     }
+
+
      
    
     </>

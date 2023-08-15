@@ -5,7 +5,7 @@ const Conditions = () => {
 
   return (
     <>
-      <div className="hidden md:flex bg-blue-500 w-[50%] flex-col justify-center items-center ">
+      {/* <div className="hidden md:flex bg-blue-500 w-[50%] flex-col justify-center items-center ">
 
       <div className="  grid grid-cols-2 gap-3 m-1 rtl items-center justify-center overflow-auto">
           {list.map((item) => {
@@ -27,25 +27,46 @@ const Conditions = () => {
 
 
 
+      </div> */}
+          <div className="hidden md:flex w-full  flex-wrap rtl">
+
+{list.map((i) => {
+  console.log(i.icon)
+  return <>
+    <Link to={`/conditions/${i.id}`}>
+    <div className="m-97 p-98 w-99 shadow-xl rounded-2xl border-2 border-[#105251] cursor-pointer hover: hover:shadow-slate-700">
+      <div className="flex items-center">
+      <img src={i.icon} alt="" />
       </div>
-      <div className="md:hidden  w-full  flex flex-col justify-between">
-       
-        <div className="  grid grid-cols-2 gap-3  rtl items-center justify-center overflow-auto">
-          {list.map((item) => {
+      <div className="font-Vazirmatn h-12 text-center font-bold text-xl mt-2 hover:text-[#105251]">
+        {i.name}
+        </div>
+      
+      </div>
+      </Link>
+  </>
+})}
+</div>
+<div className="md:hidden  w-full  flex flex-col justify-between">
+{     
+        <div className="  grid grid-cols-2 gap-3  rtl items-center justify-center overflow-auto ">
+          {
+            
+            list.map((item) => {
             return (
               <>
-                <Link to={`/manipage/conditions/${item.id}`}>
-                  <button className="border-2 border-[#7895CB] text-center text-[#213555] rounded-3xl text-lg  w-[90%] 
+                <Link to={`/conditions/${item.id}`} key={item.id}>
+                  <button className="border-2 border-[#105251] font-Vazirmatn text-xl font-bold text-center text-[#213555] rounded-3xl mr-3 w-[90%] 
                 h-60 mt-5 items-center flex justify-center flex-col cursor-pointer" key={item.id}>
-                  <img src={item.image} alt="" className=" h-44 p-4 rounded-3xl object-cover"/>
+                  <img src={item.icon} alt="" className=" h-44 p-4 rounded-3xl object-cover"/>
                     {item.name}
-                    
                 </button>
                 </Link>
               </>
             );
-          })}
-        </div>
+            })
+          }
+        </div> }
       </div>
     </>
   );

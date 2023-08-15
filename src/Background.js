@@ -2,7 +2,9 @@ import React from "react";
 import { AiOutlineSearch } from "react-icons/ai";
 import { Link } from "react-router-dom";
 // import { v4 as uuidv4 } from "uuid";
-import list from './db.js'
+import list from './db.js';
+import stil from "./Images/ed.jpg";
+
 const Background = () => {
   // const list = [
   //   {
@@ -84,7 +86,7 @@ const Background = () => {
   // ];
   return (
     <>
-      <div className="flex justify-between items-center flex-col bg-[#F7F5EB]">
+      {/* <div className="flex justify-between items-center flex-col bg-[#F7F5EB]">
         <div className=" top-32 flex  w-full mt-5 justify-center items-center  ">
           <input
             className="border-2  border-blue-500 w-[50%]  rounded-lg relative text-right p-2 focus:outline-none hidden md:flex"
@@ -122,7 +124,7 @@ const Background = () => {
         </div>
 
         <div className="md:hidden z-10">
-          {/* search */}
+          
           <div className=" flex  w-full mt-5 justify-center items-center  ">
             <input
               className="border-2  border-blue-500 w-[95%]  rounded-lg relative text-right p-2 focus:outline-none "
@@ -132,7 +134,7 @@ const Background = () => {
               <AiOutlineSearch size={20} style={{ color: "blue" }} />
             </button>
           </div>
-          {/* show Conditions */}
+   
 
           <div className="flex flex-col justify-center items-center w-full p-5 ">
             {list.map((item) => {
@@ -155,6 +157,90 @@ const Background = () => {
               );
             })}
           </div>
+        </div>
+      </div> */}
+
+
+
+      <div className="md:flex hidden h-screen items-center justify-center p-10 ">
+        <div className=" flex-1  flex flex-col rtl text-[#105251] bg-[#F0F0F0] p-20 ">
+          <p className="font-Vazirmatn text-5xl font-bold">
+            {" "}
+            "برای داشتن جهانی بهتر
+          </p>
+          <p className="font-Vazirmatn text-5xl font-bold">
+            همه کودکان نیاز دارند رشد کنند
+          </p>
+
+          <p className="font-Vazirmatn text-5xl font-bold">
+            {" "}
+            سالم باشند و استعدادهایشان شکوفا شود "{" "}
+          </p>
+          <hr className="hr" />
+          <div className="flex ltr">
+            <button
+              className="border-2 border-[#105251] 
+           m-5 p-5 font-Vazirmatn text-lg font-bold rounded-xl w-[30%]
+           hover:bg-[#105251]
+           hover:text-white"
+            >
+              تعارف عمومی
+            </button>
+            <button
+              className="border-2 bg-[#105251]
+           text-white m-5 p-5 font-Vazirmatn
+           text-lg font-bold rounded-xl w-[30%]
+           hover:bg-[#F0F0F0] hover:font-bold
+            hover:text-[#105251] border-[#105251]"
+            >
+              وضعیت های مخاطره آمیز
+            </button>
+          </div>
+        </div>
+        <div className="flex-1  items-center justify-center flex ">
+          <div className="w-[65%] h-screen bg-[#105251] p-8 flex items-center justify-center  ">
+            <img
+              src={stil}
+              alt=""
+              className="mr-[50%] rounded-3xl border-2 border-white"
+            />
+          </div>
+        </div>
+      </div>
+      {/* mobil screen */}
+
+      <div className="md:hidden h-screen w-full items-center justify-center flex flex-col  text-[#105251] ">
+        <p className="font-Vazirmatn text-4xl font-bold ">
+          برای داشتن جهانی بهتر
+        </p>
+        <p className="font-Vazirmatn text-3xl ">
+          همه کودکان نیاز دارند رشد کنند
+        </p>
+
+        <p className="font-Vazirmatn text-2xl ">
+          سالم باشند و استعدادهایشان شکوفا شود
+        </p>
+        <hr className="hr" />
+        <div className="flex ltr flex-col w-full items-center justify-center">
+        <Link to='/conditions' className="border-2 bg-[#105251]
+           text-white m-5 p-5 font-Vazirmatn text-center
+           text-lg font-bold rounded-xl w-[50%]
+           hover:bg-[#F0F0F0] hover:font-bold
+            hover:text-[#105251] border-[#105251]">
+
+            وضعیت های مخاطره آمیز
+          </Link>
+          <Link to="/definitions"       className="border-2 border-[#105251] 
+           m-5 p-5 font-Vazirmatn text-lg font-bold rounded-xl w-[50%] text-center
+           hover:bg-[#105251]
+           hover:text-white">
+  
+            تعارف عمومی
+
+          </Link>
+        
+    
+
         </div>
       </div>
     </>
