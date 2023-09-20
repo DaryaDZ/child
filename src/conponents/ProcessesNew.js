@@ -148,7 +148,10 @@ console.log(conditionName.name)
                     hover:shadow-2xl
                     "
                     >
+                      مرحله 
+                      &nbsp;
                       {i.processName}
+                  
                       
                   </div>
                     </Link>

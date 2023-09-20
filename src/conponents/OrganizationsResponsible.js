@@ -10,7 +10,7 @@ const OrganizationsResponsible = () => {
   const [organId, setOrganId] = useState("");
   let { id } = useParams();
   const Organizations= list.find((i) => i.id === id)
-  // console.log(Organizations)
+  console.log(Organizations.name)
   const handelClick = (itemId) => {
     const organ = Organizations.OrganizationsResponsible.find((i) => i.id == itemId)
     console.log(organ)
@@ -24,16 +24,17 @@ const OrganizationsResponsible = () => {
   return (
     <>
           <div className="md:flex hidden flex-col  w-full rtl  items-center justify-between">
-    <section className='font-bold text-2xl mt-10 font-Vazirmatn'>دستگاه های مسئول</section>
-    <div className=' w-[90%] mt-10 items-center flex flex-wrap justify-center'>
+        <section className='font-bold text-2xl mt-10 '>دستگاه های مسئول  در وضعیت مخاطره آمیز {Organizations.name}</section>
+    <div className=' w-full mt-10 items-center flex flex-wrap justify-center'>
     {
           Organizations.OrganizationsResponsible.map((i,index) => {
           return <>
-            <div className=' border-2 border-[#105251] p-5 m-10 w-[25%] h-full rounded-xl 
+            <div className=' border-2 border-[#105251] p-5 m-10 w-[50%] h-auto rounded-xl 
            cursor-pointer flex justify-between items-center flex-col' onClick={()=>handelClick(i.id)} key={index}>
               <div className='flex w-full items-center'>
                 <img src={i.img} alt="" className='w-16 h-16' />
-              <div className='font-Vazirmatn mr-10 text-2xl'>{i.Nameorgan}</div></div>
+                <div className='font-Vazirmatn mr-10 text-2xl'>{i.Nameorgan}</div>
+              </div>
               {
                   organId == i.id && isopen ?
                    
@@ -68,7 +69,7 @@ const OrganizationsResponsible = () => {
 
       </div>
       <div className="md:hidden mt-40 w-full h-screen flex flex-col items-center justify-center rtl  ">
-        <section className='font-bold text-lg'>دستگاه های مسئول</section>
+        <section className='font-bold text-lg'>دستگاه های مسئول در وضعیت{Organizations.name}</section>
         {Organizations.OrganizationsResponsible.map((i) => {
               return <>
                <div className='w-[90%] flex flex-col p-2  m-5 border-2 border-[#105251] rounded-2xl'>

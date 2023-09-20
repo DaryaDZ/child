@@ -186,15 +186,14 @@ const Background = () => {
             >
               تعارف عمومی
             </button>
-            <button
-              className="border-2 bg-[#105251]
+            <Link to="/recognition" className="border-2 bg-[#105251]
            text-white m-5 p-5 font-Vazirmatn
            text-lg font-bold rounded-xl w-[30%]
            hover:bg-[#F0F0F0] hover:font-bold
-            hover:text-[#105251] border-[#105251]"
-            >
-              وضعیت های مخاطره آمیز
-            </button>
+           hover:text-[#105251] border-[#105251] text-center">
+        
+                وضعیت های مخاطره آمیز
+              </Link>
           </div>
         </div>
         <div className="flex-1  items-center justify-center flex ">

@@ -1,7 +1,10 @@
 import React from "react";
 import list from "../db.js";
-import { Link } from "react-router-dom";
-const Conditions = () => {
+import { Link,useLocation } from "react-router-dom";
+const Conditions = (props) => {
+  const location = useLocation()
+  console.log(location)
+  // console.log(Value)
 
   return (
     <>
@@ -31,19 +34,43 @@ const Conditions = () => {
           <div className="hidden md:flex w-full  flex-wrap rtl">
 
 {list.map((i) => {
-  console.log(i.icon)
+  // console.log(i.icon)
   return <>
-    <Link to={`/conditions/${i.id}`}>
-    <div className="m-97 p-98 w-99 shadow-xl rounded-2xl border-2 border-[#105251] cursor-pointer hover: hover:shadow-slate-700">
-      <div className="flex items-center">
-      <img src={i.icon} alt="" />
-      </div>
-      <div className="font-Vazirmatn h-12 text-center font-bold text-xl mt-2 hover:text-[#105251]">
-        {i.name}
-        </div>
+    {/* <div>{Value}</div> */}
       
+      {i.name === location.state.Value ?
+           <Link to={`/conditions/${i.id}`}>
+         <div className="m-97 p-98 w-99 shadow-xl rounded-2xl border-2 border-[#105251] cursor-pointer hover: hover:shadow-slate-700">
+         <div className="flex items-center">
+         <img src={i.icon} alt="" />
+         </div>
+         <div className="font-Vazirmatn h-12 text-center font-bold text-xl mt-2 hover:text-[#105251]">
+           {i.name}
+           </div>
+         
+         </div>
+         </Link>
+
+    
+    :  <div className="m-97 p-98 w-99 shadow-xl rounded-2xl border-2 border-white ">
+        <div className="flex items-center  ">
+          <img src={i.icon2} alt="" className="" />
+    </div>
+    <div className="font-Vazirmatn h-12 text-gray-500 text-center font-bold text-xl mt-2">
+      {i.name}
       </div>
-      </Link>
+    
+    </div>
+    }
+   {/* <div className="m-97 p-98 w-99 shadow-xl rounded-2xl border-2 border-[#105251] cursor-pointer hover: hover:shadow-slate-700">
+         <div className="flex items-center">
+         <img src={i.icon} alt="" />
+         </div>
+         <div className="font-Vazirmatn h-12 text-center font-bold text-xl mt-2 hover:text-[#105251]">
+           {i.name}
+           </div>
+         
+         </div> */}
   </>
 })}
 </div>

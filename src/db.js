@@ -34,14 +34,18 @@ import bribe from './Images/icon/bribe.png'
 import smoking from './Images/icon/drug.png';
 import criminal2 from './Images/icon/mugshot.png';
 import alms from './Images/icon/aalm.png';
+import almsBW from './Images/icon/aalmBW.png'
 import refuse from './Images/icon/refuse.png';  
 import headache from './Images/icon/headache.png';
 import running from './Images/icon/relay.png'
 import thief from './Images/icon/thief.png'
 import noeducation from './Images/icon/noeducation.png';
 import bully from './Images/icon/bully.png'
+import bullyBW from './Images/icon/bullyBW.png'
 import baby from './Images/icon/baby.png';
+import babyBW from './Images/icon/babyBW.png'
 import stopbullying from './Images/icon/stopbullying.png';
+import stopbullyingBW from './Images/icon/stopbullyingBWpng.png'
 import detention from './Images/icon/detention.png';
 import calling from './Images/icon/calling.png';
 import fight from './Images/fight.mp4';
@@ -56,6 +60,17 @@ import transaction2 from './Images/transaction2.mp4';
 import error from './Images/403.mp4';
 import danger from './Images/danger.mp4';
 import study2 from './Images/study.mp4';
+import bribeBW from './Images/icon/bribeBWpng.png';
+import childBW from './Images/icon/childBW.png';
+import callingBW from './Images/icon/callingBW.png';
+import detentionBW from './Images/icon/detentionBW.png';
+import drugBw from './Images/icon/drugBw.png';
+import headacheBW from './Images/icon/headacheBW.png'
+import mugshotBW from './Images/icon/mugshotBW.png';
+import refuseBW from './Images/icon/refuseBW.png';
+import relayBw from './Images/icon/relayBw.png'
+import noeducationBW from './Images/icon/noeducationBW.png';
+import thiefBW from './Images/icon/thiefBW.png';
 const list = [
   {
     id: uuidv4(),
@@ -65,11 +80,12 @@ const list = [
     icon: stopbullying,
     Tooltip:
       "بی‌سرپرستی کودک و نوجوان توسط شخصی که مسئولیت قانونی نسبت به آن‌ها دارد",
-    video:"",
+    video: "",
+    icon2:stopbullyingBW
   },
   {
     id: uuidv4(),
-    name: "بی توجهی و سهل انگاری والدین ",
+    name: "بی توجهی و سهل انگاری والدین",
     Processes: [
       {
         id: uuidv4(),
@@ -109,7 +125,7 @@ const list = [
       },
       {
         id: uuidv4(),
-        processName: "بررسی و تحلیل",
+        processName: "تحلیل و بررسی ",
         specific: [],
         actions: [
           {
@@ -141,11 +157,11 @@ const list = [
             ],
             
           },
-          {
-            title: "بقیه سازمان ها که دارای ساختار مددکاری می باشند در صورتی که قادر به تحلیل و بررسی باشند باید این کار را انجام داده و نتیجه را به سطوح بالاتر گزارش دهند ",
-            organNam: "",
-            activity: [],
-          }
+          // {
+          //   // title: "بقیه سازمان ها که دارای ساختار مددکاری می باشند در صورتی که قادر به تحلیل و بررسی باشند باید این کار را انجام داده و نتیجه را به سطوح بالاتر گزارش دهند ",
+          //   organNam: "",
+          //   activity: [],
+          // }
         ],
       },
       { 
@@ -173,80 +189,37 @@ const list = [
         actions: [
           {
             title: "مداخله قضائی",
-            organNam: "مراکز تحت نظارت سازمان بهزیستی",
-            activity: [
-              { decription: "مشاوره روانی " },
-              { decription: "مراقبت پژشکی" },
-              { decription: "تربیت و آموزش" },
-              { decription: "شناسایی خانواده و انجام مشاوره " },
-              // { decription: "سایر اقدامات" },
-              { decription: "ارائه خدمات حمایتی و توانبخشی" }
-            ],
+            organNam: "مداخله قضائی سخت || مداخله قضائی ترمیمی ",
+            Description:"مجازات والدین یا سرپرستان قانونی در صورت آسیب جدی به طفل و نوجوان با در نظر گرفتن عدم نقض نظارت های آتی والدین||استفاده از تکنیک های عدالت ترمیمی برای بازسازی وضعیت اتفاق افتاده ",
+            activity: []
+ 
           
           },
         
           {
             title: "مداخله نرم ",
-            organNam: "سازمان ها و یا افرادی که  مرحله تحلیل و بررسی  را انجام داده اند مداخله را آغاز می کنند و نیازمند روند و اقدامات قانونی نمی باشد ",
-            activity: [],
+             organNam: "مراکز تحت نظارت سازمان بهزیستی",
+            activity: [
+              { decription: "مشاوره روانی " },
+              { decription: "مراقبت پژشکی" },
+              { decription: "تربیت و آموزش" },
+              { decription: "شناسایی خانواده و انجام مشاوره " },
+              { decription: "ارائه خدمات حمایتی و توانبخشی" }
+            ],
           },
         
        
-          // {
-          //   organNam: "وزارت بهداشت",
-          //   activity: [
-          //     { decription: "مشاوره روانی" },
-          //     { decription: "مراقبت های پزشکی" },
-          //   ],
-          // },
-          // {
-          //   organNam: "وزارت آموزش و پرورش",
-          //   activity: [{ decription: "آموزش و تربیت" }],
-          // },
-          // {
-          //   organNam: "بهزیستی",
-          //   activity: [{ decription: "ارائه خدمات حمایتی و توانبخشی" }],
-          // },
         ],
       },
-      // {
-      //   id: uuidv4(),
-      //   processName: "فراهم کردن محیط حمایتی",
-      //   specific: [],
-      //   actions: [
-      //     {
-      //       organNam: "بهزیستی",
-      //       activity: [
-      //         { decription: "خارج کردن طفل و نوجوان از محیط مخاطره آمیز" },
-      //         { decription: "انتقال به محیط های امن " },
-      //       ],
-      //     },
-      //   ],
-      // },
-      // {
-      //   id: uuidv4(),
-      //   processName: "مداخله و درمان",
-      //   specific: [],
-      //   actions: [
-      //     {
-      //       organNam: "مراکز تحت نظارت سازمان بهزیستی",
-      //       activity: [
-      //         { decription: "مشاوره روانی " },
-      //         { decription: "مراقبت پژشکی" },
-      //         { decription: "تربیت و آموزش" },
-      //         { decription: "مشاوره خانواده" },
-      //         { decription: "سایر اقدامات" },
-      //       ],
-      //     },
-      //   ],
-      // },
+    
       {
         id: uuidv4(),
         processName: "ارزیابی و پیگیری",
         specific: [],
         actions: [
           {
-            organNam: "بهزیستی",
+            title:"ارزیابی موردی",
+            organNam: "آموزش و پرورش || نیروی انتظامی || مراکز درمانی ",
             activity: [
               { decription: "ملاقات های مکرر" },
               { decription: "ارزیابی پیشرفت طفل و نوجوان" },
@@ -256,7 +229,8 @@ const list = [
             ],
           }
           , {
-            organNam: "سازمان های ارائه دهنده خدمات ",
+            title:"ارزیابی کلی",
+            organNam: "سازمان بهزیستی  ",
             activity: [
               { decription: "ارزیابی نتایج برنامه ها" },
               { decription: "بررسی پیشرفت طفل" },
@@ -458,7 +432,8 @@ const list = [
         ]
       },
     ],
-    video:study2,
+    video: study2,
+    icon2:childBW
   },
   {
     id: uuidv4(),
@@ -468,7 +443,8 @@ const list = [
     Tooltip:
       "	ابتلا به بیماری‌ها، اختلالات رفتاری والدین، روانی، شخصیتی و یا بیماری‌های جسمی واگیر صعب العلاج برای والدین، اولیاء یا سرپرستان قانونی",
     icon: bully,
-      video:"",
+    video: "",
+      icon2:bullyBW
   },
   {
     id: uuidv4(),
@@ -478,21 +454,54 @@ const list = [
         id: uuidv4(),
         processName: "شناسایی اطفال و نوجوانان",
         specific: [
-          {
-            organNam: "سازمان زندان ها ",
-            organAction:
-              "شناسایی و معرفی اطفال دارای والدین یا سرپرستان قانونی زندانی",
-          },
-          {
-            organNam: "سازمان بهزیستی ",
-            organAction: "بررسی و تهیه گزارش از وضعیت طفل",
-          },
-          {
-            organNam: "وزارت آموزش و پرورش",
-            organAction: "بررسی وضعیت طفل ",
-          },
+          // {
+          //   organNam: "سازمان زندان ها ",
+          //   organAction:
+          //     "شناسایی والدین زندانی دارای فرزند زیر 18 سال  ",
+          // },
+          // {
+          //   organNam: "سازمان بهزیستی ",
+          //   organAction: "بررسی و تهیه گزارش از وضعیت طفل",
+          // },
+          // {
+          //   organNam: "وزارت آموزش و پرورش",
+          //   organAction: "بررسی وضعیت طفل ",
+          // },
+          
         ],
-        actions: [],
+        actions: [
+          {
+            organNam: "سازمان زندان ها",
+            activity: [
+              { decription: "شناسایی والدین زندانی دارای فرزند زیر 18 سال " },
+              { decription: "ثبت اطلاعات مربوط به سن و جنسیت کودکان " },
+              { decription: "ثبت اطلاعات مربوط به مدت زمان حبس والدین " },
+              { decription: "تهیه لیستی بر اساس اطلاعات فوق " },
+              
+            ]
+          },
+          {
+            organNam: "سازمان بهزیستی || دفتر حمایت از اطفال دادگستری",
+            activity: [
+              {decription:"در صورت کامل نبودن مشخصات و اطلاعات زندانیان "}
+            ]
+          },
+          {
+            organNam: "سازمان ثبت احوال",
+            activity: [
+              {decription:"ارائه اطلاعات و مشخصات کامل زندانیان دارای فرزند زیر 18 سال  بر اساس لیست ارسالی سازمان  زندان ها "}
+            ]
+          
+          },
+          {
+            organNam: "سازمان بهزیستی || دفتر حمایت از اطفال دادگستری",
+            activity: [
+              {decription:"مراجعه به آدرس طفل و بررسی و تهیه گزارش از وضعیت طفل و نوجوان "}
+            ]
+          },
+
+
+        ],
       },
       {
         id: uuidv4(),
@@ -502,13 +511,128 @@ const list = [
           {
             organNam: "سازمان بهزیستی",
             activity: [
-              {
-                decription:
-                  "بررسی شرایط روانی ،اجتماعی و اقتصادی طفل و نوجوان ",
-              },
-              { description: "شناسایی نیاز های طفل و نوجوان" },
+              // {
+              //   decription: "شناسایی نیاز های طفل و نوجوان",
+
+              // },
             ],
           },
+          
+   {
+    organNam: "آیا طفل سرپرست دارد ؟",
+    flag: true,
+    activity: [
+      {
+        decription: "بله || خیر ",
+        category: [
+          {
+            title: "خیر",
+            organNam: "سازمان بهزیستی",
+            CategoryActivity: [
+            {CatDec:"انجام تدابیر حمایتی"}
+            ],
+          },
+          {
+            title: "بله",
+            organNam: "سازمان بهزیستی",
+            CategoryActivity: [
+              { CatDec: "نظارت بر  استمرار وجود سرپرست و ثبت اطلاعات آن " },
+              // { CatDec: "ثبت اطلاعات سرپرست" },
+              // {CatDec:"مطالبه گری از سرپرست"},
+          ]
+          },
+          
+      ]
+      
+      }
+  ]
+          },
+   
+          {
+            organNam: "آیا طفل مشغول به تحصیل است؟",
+            flag: true,
+            activity: [
+              {
+                decription: "بله || خیر ",
+                category: [
+                  
+                  {
+                    title: "خیر",
+                    organNam: "سازمان بهزیستی  ",
+                    CategoryActivity: [
+                      { CatDec: "ارجاع طفل به سازمان آموزش و پرورش" }
+                    ],
+                  },
+                  
+                  {
+                    title: "بله",
+                    organNam: "سازمان بهزیستی ",
+                    CategoryActivity: [
+                     {CatDec:"بررسی وضعیت طفل "}
+                    ]
+                    
+                  },
+                  // {
+                  //   title: "خیر",
+                  //   organNam: "سازمان آموزش و پرورش",
+                  //   CategoryActivity: [
+                  //     { CatDec: "بررسی وضعیت طفل " },
+                  //   {CatDec:"ثبت نام طفل به صورت رایگان"},
+                  //   {CatDec:"جبران عقب ماندگی طفل "},
+
+                  //   ],
+                  // },
+              ]
+              
+              }
+          ]
+          },
+          {
+            flag: true,
+            organNam: "آیا طفل نیاز به مراقب های پزشکی دارد ؟",
+            activity: [
+              {
+                decription: "بله || خیر ",
+              
+                category: [
+                  {
+                    title: "خیر",
+                    organNam: "",
+                    CategoryActivity: [
+                      // { CatDec: "ارجاع طفل به سازمان آموزش و پرورش" }
+                    ],
+                  },
+                  {
+                    title: "بله",
+                    organNam: "سازمان بهزیستی ",
+                    CategoryActivity: [
+                     {CatDec:"ارجاع طفل به مراکز درمانی "}
+                    ]
+                    
+                  },
+                     
+                
+                  // {
+                  //   title: "بله",
+                  //   organNam: "مراکز درمانی  ",
+                  //   CategoryActivity: [
+                  //     { CatDec: "ارائه خدمات پژشکی " },
+                  //     { CatDec: "ارائه خدمات روانشناختی" },
+                  //     {CatDec:"ارائه خدمات اجتماعی "}
+                  //   ]
+                    
+                  // },
+               
+               
+                
+                  ]
+              
+              }
+            ]
+          
+          
+          }
+         
         ],
       },
       {
@@ -517,16 +641,38 @@ const list = [
         specific: [],
         actions: [
           {
+            title:"در صورت نداشتن سرپرست",
             organNam: "بهزیستی",
+            Description:"سازماندهی کودکان در مراکز نگهداری اطفال بهزیستی || ارجاع کودکان به NGO های تحت نظر بهزیستی || سازماندهی اطفال در خانواده های جایگزین ",
             activity: [
-              { decription: "ارائه مشاوره" },
-              { decription: "پشتیبانی روانی" },
-              { decription: "ارزیابی آموزشی و مالی" },
+          // {decription:"درصورت امکان سازماندهی اطفال در خانواده های جایگزین || ارجاع طفل به NGO  ها جهت نگهداری آنان || سازماندهی کودکان در مراکز نگهداری اطفال تحت نظر بهزیستی "},
+              // { decription: "ارائه مشاوره" },
+              // { decription: "پشتیبانی روانی" },
+              // { decription: "ارزیابی آموزشی و مالی" },
             ],
           },
           {
+            title:"در صورت عدم ثبت نام در مدرسه ",
             organNam: "آموزش و پرورش",
-            activity: [{ decription: "ارائه برنامه های آموزشی خاص" }],
+            activity: [
+              { decription: "بررسی ضعیت طفل" },
+              {decription:"ثبت نام طفل به صورت رایگان"},
+              
+              {decription:"جبران عقب ماندگی طفل "},
+              { decription: "ارائه برنامه های آموزشی خاص" },
+
+            ],
+          },
+          {
+            title:"در صورت نیاز به مراقب های پزشکی",
+            organNam: "مراکز درمانی ",
+            activity: [
+              { decription:"ارائه خدمات پژشکی" },
+              {decription: "ارائه خدمات روانشناختی"},
+              
+              {decription:"ارائه خدمات اجتماعی "},
+
+            ],
           },
         ],
       },
@@ -534,48 +680,78 @@ const list = [
         id: uuidv4(),
         processName: "ترتیبات قانونی",
         specific: [
-          {
-            organNam: "سازمان زندان ها",
-            organAction:
-              "اگر وضعیت زندانی والدین باعث نگرانی برای امنیت و رفاه طفل است ",
-          },
-          {
-            organNam: "بهزیستی",
-            organAction: "",
-          },
-          {
-            organNam: "آموزش وپرورش",
-            organAction: "",
-          },
-          {
-            organNam: "دفتر حمایت از اطفال  قوه قضائیه ",
-            organAction: "تحمل حبس تحت نظارت الکترونیکی برای والدین",
-          },
+          // {
+          //   organNam: "سازمان زندان ها",
+          //   organAction:
+          //     "اگر وضعیت زندانی والدین باعث نگرانی برای امنیت و رفاه طفل است ",
+          // },
+          // {
+          //   organNam: "بهزیستی",
+          //   organAction: "",
+          // },
+          // {
+          //   organNam: "آموزش وپرورش",
+          //   organAction: "",
+          // },
+          // {
+          //   organNam: "دفتر حمایت از اطفال  قوه قضائیه ",
+          //   organAction: "تحمل حبس تحت نظارت الکترونیکی برای والدین",
+          // },
         ],
-        actions: [],
+        actions: [
+          {
+            organNam:"سازمان زندان ها ",
+            activity: []
+          },
+          {
+            
+            organNam:" آموزش و پرورش || سازمان بهزستی || دفتر حمایت از اطفال دادگستری",
+            Description: "تامین حضور معلمان در زندان ها ، یا ترتیبات دیگر برای تامین تحصیل||تامین خدمات بهزستی خدمات مشاوره ، پشتیبانی و حمایت های روانشناختی|| استفاده از مجازات های جایگزین مانند تحمل حبس تحت نظارت الکترونیکی برای والدین",
+            activity: [
+          // {decription:"تامین خدمات بهزیستی شامل خدمات مشاوره ، حمایت های روانشناختی ، مراقبت های اجتماعی و ... || تامین حضور معلمان در زندان ها یا ترتیبات دیگر در برای تامین تحصیل کودکان"}
+            ]
+
+            
+          },
+          // {
+          //   title:"آموزش و پرورش",
+          //   organNam: "آموزش و پرورش",
+          //   activity: [
+          //     {decription:"تامین حضور معلمان در زندان ها یا ترتیبات دیگر در برای تامین تحصیل کودکان "}
+          //   ]
+          // }
+        ],
       },
       {
         id: uuidv4(),
         processName: "نظارت مستمر",
         specific: [
-          {
-            organNam: "بهزیستی",
-            organAction: "",
-          },
-          {
-            organNam: "آموزش پرورش",
-            organAction: "",
-          },
-          {
-            organNam: "",
-            organAction: "نظارت مستمر وضعیت طفل پس از اجرای اقدامات",
-          },
-          {
-            organNam: "",
-            organAction: "تغییرات و تعدیلات لازم در صورت نیاز",
-          },
+        //   {
+        //     organNam: "بهزیستی",
+        //     organAction: "",
+        //   },
+        //   {
+        //     organNam: "آموزش پرورش",
+        //     organAction: "",
+        //   },
+        //   {
+        //     organNam: "",
+        //     organAction: "نظارت مستمر وضعیت طفل پس از اجرای اقدامات",
+        //   },
+        //   {
+        //     organNam: "",
+        //     organAction: "تغییرات و تعدیلات لازم در صورت نیاز",
+        //   },
         ],
-        actions: [],
+        actions: [
+          {
+            organNam: "سازمان بهزیستی || آموزش و پرورش || دفتر حمایت از اطفال دادگستری",
+            activity: [
+              { decription: "نظارت مستمر وضعیت طفل پس از اجرای اقدامات" },
+            {decription:"تغییرات و تعدیلات لازم در صورت نیاز"},
+            ]
+          }
+        ],
       },
     ],
     legalIssues: [
@@ -608,66 +784,92 @@ const list = [
         proviso: "",
       },
     ],
-    OrganizationsColleague: [],
+    OrganizationsColleague: [
+      {
+        id: uuidv4(),
+        Nameorgan: "سازمان زندان ها",
+        img: zendan,
+        duties: [
+          { description:"شناسایی والدین زندانی دارای فرزند زیر 18 سال و معرفی آنان به سازمان بهزیستی و دفتر حمایت از اطفال دادگستری" },
+         
+        ],
+      },
+      {
+        id: uuidv4(),
+        Nameorgan: "آموزش و پرورش ",
+        img: amozesh,
+        duties: [
+          { description: "تضمین تحصیل اطفال و نوجوانان دارای والدین زندانی در صورت نیاز" },
+          {description:"نظارت بر وضعیت طفل و نوجوان "},  
+        ],
+      },
+      {
+        id: uuidv4(),
+        Nameorgan: "دفتر حمایت از اطفال دادگستری ",
+        img: logo,
+        duties: [
+          { description: "شناسایی و بررسی وضعیت طفل و نوجوان دارای والدین زندانی و معرفی آن به سازمان بهزیستی " },
+          { description: "تصمیم گیری در مورد استفاده والدین از مجازات های جایگزین برای تحمل حبس " },
+          { description: "نظارت بر وضعیت طفل و نوجوان " },  
+        ],
+      },
+      {
+        id: uuidv4(),
+        Nameorgan: "سازمان بهداشت و درمان",
+        img: behdasht,
+        duties: [
+        {description:"ارائه خدمات پزشکی ، روانشناختی و ... در صورت نیاز اطفال و نوجوانان دارای والدین زندانی "}
+        ],
+      },
+      {
+        id: uuidv4(),
+        Nameorgan: "سازمان ثبت احوال ",
+        img: name,
+        duties: [
+        {description:"ارائه مشخصات کامل از زندانیان دارای فرزند زیر 18 سال به سازمان بهزیستی و دفتر حمایت از اطفال دادگستری در صورت کامل نبودن لیست ارسالی سازمان زندان ها"}
+        ],
+      },
+    ],
     OrganizationsResponsible: [
       {
         id: uuidv4(),
         Nameorgan: "بهزیستی",
         img: behzisti,
         duties: [
-          {
-            description: "نسبت به اخذ و جمع‌آوری اطلاعات مربوط به وضعیت‌های مخاطره‌آمیز برای اطفال و نوجوانان و انجام اقدامات لازم برای افزایش آگاهی‌های مردم در این زمینه اقدام کند.",
-          },
-          {
-            description: "در راستای وظایف قانونی و وظایف مقرر در این قانون از همکاری و مشارکت تمامی دستگاه‌های اجرایی موضوع ماده (۵) قانون مدیریت خدمات کشوری مصوب 8/7/1386 استفاده کند. دستگاه‌های اجرایی مکلفند در چهارچوب وظایف قانونی خود با سازمان مذکور همکاری کنند.",
-          },
-          {
-            description: "با استفاده از مددکاران اجتماعی در قالب فوریت‌های خدمات اجتماعی با همکاری شهرداری یا دهیاری و نیروی انتظامی نسبت به شناسایی، پذیرش، حمایت، نگهداری و توانمندسازی اطفال و نوجوانان موضوع این قانون و اعلام موضوعات به مراجع صالح اقدام کند",
-          },
+          { description: "شناسایی و بررسی وضعیت سرپرستی طفل  و نوجوان دارای والدین زندانی" },
+          {description:"بررسی وضعیت تحصیلی طفل و نوجوان دارای والدین زندانی"},
+          
+          {description:"بررسی وضعیت سلامتی طفل و نوجوان دارای ولدین زندانی"},
+
+          {description:"سازماندهی کودکان و نوجوانان بی سرپرست "},
+
+          {description:"تامین خدمات مشاوره و حمایت های روانشناختی"},
+
+          {description:"نظارت مستمر بر وضعیت طفل و نوجوان تا زمان آزاد شدن والدین "},
+
+
         ],
       },
-      {
-        id: uuidv4(),
-        Nameorgan: "سازمان زندان ها",
-        img: zendan,
-        duties: [
-          { description: "نسبت به نگهداری جداگانه اطفال از نوجوانان و سایر زندانیان اقدام کند." },
-          {
-            description: "اطفال و نوجوانانی را که پدر یا مادر یا سرپرست قانونی آنان در زندان به‌سر می‏‌برند، به سازمان بهزیستی کشور معرفی کرده تا برابر مقررات، طفل یا نوجوان نیازمند را حمایت کند.",
-          },
-          {
-            description:
-              "نظارت بر حسن اجرای آراء و تصمیمات مرتبط با طفل و نوجوان ",
-          },
-          {
-            description: "ارزیابی وضعیت طفل یا نوجوان پس از اجرای رای",
-          },
-          {
-            description:
-              "تهیه و ارائه تحقیقات آماری و اطلاعاتی مرتبط با طفل  و نوجوان ",
-          },
-          {
-            description:
-              "اعلام به مرجع انتظامی یا قضائی در صورت وجود قرائن دال بر وقوع جرم علیه طفل ونوجوان ",
-          },
-        ],
-      },
+    
     ],
 
     image: Imprisonment,
     Tooltip: "زندانی شدن والدین، اولیاء یا سرپرستان قانونی",
     icon: criminal2,
-    video:prisoner
+    video: prisoner,
+    icon2:mugshotBW
   },
   {
     id: uuidv4(),
-    name: "اعتیاد هر یک از والدین،",
+    name: "اعتیاد هر یک از والدین",
     Processes: [
       {
         id: uuidv4(),
-        processName: "شناسایی طفل و نوجوانان در معرض خطر",
+        processName: "شناسایی طفل و نوجوانان ",
         actions: [],
-        specific: [],
+        specific: [
+         
+        ],
         general: [
           { title: "وظیفه همه دستگاه ها" },
           {title:"وظیفه همه شهروندان"}
@@ -677,77 +879,98 @@ const list = [
         id: uuidv4(),
         processName: "ارزیابی وضعیت طفل و نوجوانان",
         actions: [
+        
           {
-            organNam: "مددکاران بهزیستی  || معلمان آموزش و پرورش",
+            title: "ارزیابی موردی",
+            organNam:"آموزش و پرورش || سازمان بهزیستی ",
+            Description: "بررسی و ارزیابی وضعیت طفل || ارزیابی روانشناختی ، پزشکی ، اجتماعی و ...  ",
             activity: [
-              { decription: "ارزیابی های پزشکی " },
-              { decription: "روان شناختی" },
-              { decription: "ارزیابی های اجتماعی" },
+              {
+            }
             ]
-  }
+          },
+          {
+            title:  "ارزیابی کلی",
+            organNam: "سازمان هایی که در مرحله شناسایی ، طفل و نوجوان با اعتیاد والدین را شناسایی کرده اند ارزیابی مقدماتی را انجام داده ",
+            Description: "در صورت توانایی در حل مسئله ،به دستگاه های مسئول ارجاع داده نمی شود || در صورت مواجه با موارد حاد ارجاع به سازمان بهزیستی ",
+            activity:[]
+          },
         ],
         specific: [],
       },
  {
         id: uuidv4(),
-        processName: "تحت نظر قرار گرفتن کودکان و نوجوانان در معرض خطر",
+        processName: "نظارت و تدابیر حمایتی",
    actions: [
      {
+       title: "مداخله نرم ",
        organNam: "سازمان بهزیستی",
        activity: [
          { decription: "تحت نظر قرار دادن طفل یا نوجوان " },
-         { decription: "مدیریت موارد اورژانسی" },
-         { decription: "ارائه خدمات درمانی" },
-         { decription: "حمایت روانشناختی و مشاوره" },   
+         { decription: "ارائه مشاوره" },
+         { decription: "ارائه سبک زندگی" },
+         { decription: "ارائه خدمات درمانی " },   
+         { decription: "ارائه خدمات اجتماعی" },
+       
      ]
-     }
-        ],
-        specific: [],
-      },
-{
-        id: uuidv4(),
-        processName: "ارائه خدمات درمانی",
-  actions: [
-    {
-      organNam: "با تشخیص مددکار بهزیستی || سازمان های مردم نهاد مثل انواع NGO ها || مراکز ترک اعتیاد ",
+     },
+     {
+      title:"مداخله جدی",
+      organNam:"در صورت آسیب جدی به طفل و نوجوان ",
       activity: [
-        { decription: "درمان مواد مخدر" },
-        { decription: "ارائه مشاوره های روان شناختی " },
-        {decription:"کمک‌های روان‌درمانی "}
+        { decription: "جداسازی کودک از خانواده  " },
+        { decription: "سازماندهی اطفال در خانواده های جایگزین" },
+        { decription: "ارجاع کودکان به انجمن  های تحت نظر بهزیستی" },
+        { decription: "سازماندهی کودکان در مراکز نگهداری اطفال بهزیستی" },   
     ]
-    
     }
         ],
         specific: [],
       },
- {
-        id: uuidv4(),
-        processName: "ارائه حمایت‌های اجتماعی",
-   actions: [
-     {
-       organNam: "مددکار بهزیستی  || سازمان های مردم نهاد مثل انواع NGO ها  ",
-       activity: [
-         {decription:"تشکیل کارگاه ها و گروه های حمایتی برای کودکان و نوجوان که نیاز به حمایت اجتماعی و حمایت از خانواده دارند "},
-       ]
-          }
-        ],
-        specific: [],
-      },
- {
-        id: uuidv4(),
-        processName: "آموزش بهداشت روانی و روان‌شناسی به خانواده‌ها",
-   actions: [
-    {
-      organNam: "مددکار بهزیستی  || سازمان های مردم نهاد مثل انواع NGO ها  ",
-      activity: [
-        {
-          decription:"آموزش و آگاهی به خانواده ها در مورد بهداشت روانی و روان شناسی کودکان و نوجوانان "
-        },
-      ]
-         }
-        ],
-        specific: [],
-      },
+// {
+//         id: uuidv4(),
+//         processName: "ارائه خدمات درمانی",
+//   actions: [
+//     {
+//       organNam: "با تشخیص مددکار بهزیستی || سازمان های مردم نهاد مثل انواع NGO ها || مراکز ترک اعتیاد ",
+//       activity: [
+//         { decription: "درمان مواد مخدر" },
+//         { decription: "ارائه مشاوره های روان شناختی " },
+//         {decription:"کمک‌های روان‌درمانی "}
+//     ]
+    
+//     }
+//         ],
+//         specific: [],
+//       },
+//  {
+//         id: uuidv4(),
+//         processName: "ارائه حمایت‌های اجتماعی",
+//    actions: [
+//      {
+//        organNam: "مددکار بهزیستی  || سازمان های مردم نهاد مثل انواع NGO ها  ",
+//        activity: [
+//          {decription:"تشکیل کارگاه ها و گروه های حمایتی برای کودکان و نوجوان که نیاز به حمایت اجتماعی و حمایت از خانواده دارند "},
+//        ]
+//           }
+//         ],
+//         specific: [],
+//       },
+//  {
+//         id: uuidv4(),
+//         processName: "آموزش بهداشت روانی و روان‌شناسی به خانواده‌ها",
+//    actions: [
+//     {
+//       organNam: "مددکار بهزیستی  || سازمان های مردم نهاد مثل انواع NGO ها  ",
+//       activity: [
+//         {
+//           decription:"آموزش و آگاهی به خانواده ها در مورد بهداشت روانی و روان شناسی کودکان و نوجوانان "
+//         },
+//       ]
+//          }
+//         ],
+//         specific: [],
+//       },
 {
         id: uuidv4(),
         processName: "نظارت و پیگیری",
@@ -781,7 +1004,9 @@ const list = [
         Nameorgan: "وزارت بهداشت و سازمان های درمانی",
         img: behdasht,
         duties: [
-        {description:"کمک به بهبود وضعیت اطفال  و نوجوانان با ارائه خدمات درمانی اعتیاد   ، روان درمانی و پزشکی "},
+          { description: "کمک به بهبود وضعیت اطفال  و نوجوانان با ارائه خدمات درمانی اعتیاد   ، روان درمانی و پزشکی " },
+         { description: "ارائه خدمات تخصصی به اطفال و نوجوانان مبتلا به اعتیاد مختلف مانند مواد مخدر و روان گردان " },
+
       ]
       
       },
@@ -794,6 +1019,25 @@ const list = [
       ]
       
       },
+      {
+        id: uuidv4(),
+        Nameorgan: "نیروی انتظامی ",
+        img: niro,
+        duties: [
+        // {description:"انجام اقدامات ارتقاء آگاهی درباره اعتیادها و رفتارهای سلامتی برای کودکان و نوجوانان "},
+      ]
+      
+      },
+      // {
+      //   id: uuidv4(),
+      //   Nameorgan: "مراکز ترک اعتیاد",
+      //   img: clinic,
+      //   duties: [
+      //     { description: "ارائه خدمات تخصصی به اطفال و نوجوانان مبتلا به اعتیاد مختلف مانند مواد مخدر و روان گردان " },
+          
+      // ]
+      
+      // },
      
     ],
     OrganizationsResponsible: [
@@ -808,16 +1052,7 @@ const list = [
         ]
       },
      
-      {
-        id: uuidv4(),
-        Nameorgan: "مراکز ترک اعتیاد",
-        img: clinic,
-        duties: [
-          { description: "ارائه خدمات تخصصی به اطفال و نوجوانان مبتلا به اعتیاد مختلف مانند مواد مخدر و روان گردان " },
-          
-      ]
-      
-      },
+     
       
 
       
@@ -827,6 +1062,7 @@ const list = [
       "	اعتیاد والدین، اولیاء یا سرپرستان قانونی به مواد مخدر و روان‌گردان یا قمار",
     icon: smoking,
     video: addiction2,
+    icon2:drugBw
       
   },
   {
@@ -838,6 +1074,7 @@ const list = [
       "قوادی، اداره مراکز فساد و فحشا توسط والدین، اولیاء یا سرپرستان قانونی و یا اشتهار آن‌ها به فساد اخلاق و فحشا",
     icon: bribe,
     video: "",
+    icon2:bribeBW
       
   },
   {
@@ -848,7 +1085,9 @@ const list = [
     Tooltip:
       "	خشونت مستمر والدین، اولیاء، سرپرستان قانونی و یا سایر اعضای خانواده نسبت به یکدیگر",
     icon: refuse,
-      video:""
+    video: "",
+    icon2:refuseBW
+      
   },
   {
     id: uuidv4(),
@@ -1187,11 +1426,12 @@ const list = [
     ],
     Tooltip: "	بازماندن کودک و نوجوان از تحصیل، بازمانده از تحصیل ",
     icon: noeducation,
-    video:study
+    video: study,
+    icon2:noeducationBW
   },
   {
     id: uuidv4(),
-    name: "طرد شدن طفل و نوجوان ",
+    name: "طرد شدن طفل و نوجوان",
     Processes: [
       {
         id: uuidv4(),
@@ -1376,7 +1616,8 @@ const list = [
     image: Exclusion,
     Tooltip: "طرد کودک و نوجوان از سوی خانواده",
     icon: detention,
-    video:study2
+    video: study2,
+    icon2:detentionBW
   },
   {
     id: uuidv4(),
@@ -1386,7 +1627,8 @@ const list = [
     Tooltip:
       "کم‌توانی جسمی یا ذهنی کودک و نوجوان، ابتلا به بیماری‌های خاص یا اختلال هویت جنسی، ابتلا به بیماری های خاص کودکان",
     icon: headache,
-      video:""
+    video: "",
+      icon2:headacheBW
   },
   {
     id: uuidv4(),
@@ -1396,7 +1638,8 @@ const list = [
     Tooltip:
       "	نقض قوانین جزایی توسط کودک یا ارتکاب جرم توسط نوجوان و یا استفاده از آن‌ها در فعالیت‌های مجرمانه، واردشدن یا واردکردن کودک و نوجوان در فعالیت‌هایی نظیر تکدی‌گری و قاچاق و همچنین اعتیاد آن‌ها به مواد‌مخدر، روان‌گردان یا مشروبات الکلی",
     icon: thief,
-      video:""
+    video: "",
+      icon2:thiefBW
   },
   // {
   //   id: uuidv4(),
@@ -1421,7 +1664,8 @@ const list = [
     Tooltip:
       "	وضعیت زیان‌بار ناشی از فقر شدید کودکان، آوارگی، پناهندگی، مهاجرت یا بی‌تابعیتی",
     icon: alms,
-      video:"",
+    video: "",
+      icon2:almsBW
   },
   // {
   //   id: uuidv4(),
@@ -1435,7 +1679,8 @@ const list = [
     image: Frequent,
     Tooltip: "	فرار مکرر کودک و نوجوان از خانه یا مدرسه و ترک تحصیل",
     icon: running,
-    video:"",
+    video: "",
+    icon2:relayBw
   },
   {
     id: uuidv4(),
@@ -1754,7 +1999,8 @@ const list = [
     image: abuse,
     Tooltip: "	سوءرفتار نسبت به کودک و نوجوان و یا بهره‌کشی از آن‌ها.",
     icon: calling,
-    video:fight
+    video: fight,
+    icon2:callingBW
   },
   {
     id: uuidv4(),
@@ -1764,7 +2010,8 @@ const list = [
     Tooltip:
       "عدم ثبت واقعه ولادت توسط والدین یا عدم اخذ اسناد سجلی یا هویتی برای کودک و نوجوان بدون عذر موجه",
     icon: baby,
-      video:""
+    video: "",
+      icon2:babyBW
   },
   // {
   //   id: uuidv4(),

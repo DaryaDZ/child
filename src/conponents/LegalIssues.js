@@ -111,7 +111,7 @@ const LegalIssues = () => {
               src={Issues.video}
               muted
               autoPlay
-              loop
+              
             
             ></video></>:<></>}
         </div>

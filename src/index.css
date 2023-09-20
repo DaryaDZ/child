@@ -36,7 +36,13 @@ color:#FF0060;
       border:0.5px solid skyblue
       
     }
-
+    .trapezium {
+      height: 0;
+      width: 150px;
+      /* border-bottom: 150px solid green; */
+      border-left: 100px solid transparent;
+      border-right: 100px solid transparent;
+   }
    
   }
 

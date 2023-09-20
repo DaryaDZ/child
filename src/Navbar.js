@@ -105,7 +105,7 @@ const Navbar = () => {
     // const [isOpen, setIsopen] = useState(false);
   return (
     <>
-          <div className="w-full bg-[#F0F0F0] sticky h-20  justify-between items-center shadow-lg	md:flex hidden">
+          <div className="w-full bg-[#F0F0F0] sticky h-20 justify-between items-center shadow-lg	md:flex hidden">
         <div className="flex items-center justify-center">
           <img src={logoPazhoheshgal} alt="" className="w-22 h-20 ml-3 mt-3 mb-3 " />
 {          search ? <></>:<AiOutlineSearch size={30} style={{ color: "#105251", marginLeft: "5", cursor: "pointer" }} onClick={openSeachBox} />
@@ -138,7 +138,7 @@ const Navbar = () => {
               <GiOpenBook style={{ color: "#105251", marginLeft: "5" }} />
             </li>
           </Link>
-          <Link to="/conditions">
+          <Link to="/recognition">
             <li className="m-3 list-none cursor-pointer flex items-center justify-center hover:border-b-2 border-b-[#105251] ">
               وضعیت های مخاطره آمیز
               <MdOutlineDangerous

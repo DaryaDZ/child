@@ -17,14 +17,14 @@ const OrganizationsColleague = () => {
   return (
     <>
             <div className="md:flex hidden flex-col  w-full rtl  items-center justify-between rtl">
-        <section className='font-bold text-2xl mt-10 font-Vazirmatn'>دستگاه های همکار</section>
-        <div className=' w-[90%] mt-10 items-center flex flex-wrap justify-center'>
+        <section className='font-bold text-2xl mt-10 '>دستگاه های همکار در وضعیت مخاطره آمیز {Organizations.name}</section>
+        <div className=' w-full mt-10 items-center flex flex-wrap justify-center'>
           {Organizations.OrganizationsColleague.length ? <>
           
             {
             Organizations.OrganizationsColleague.map((i) => {
             return <>
-              <div className=' border-2 border-[#105251] p-5 m-10 w-[25%] h-full rounded-xl 
+              <div className=' border-2 border-[#105251] p-5 m-10 w-[50%] h-full rounded-xl 
              cursor-pointer flex justify-between items-center flex-col' onClick={() => handelClick(i.id)}>
                 <div className='flex w-full items-center'>
                   <img src={i.img} alt="" className='w-16 h-16' />
@@ -37,7 +37,7 @@ const OrganizationsColleague = () => {
                       {
                           i.duties.map((i) => {
                           return  i.description !== "" ? <>
-                          <li className='text-justify p-2  font-Vazirmatn text-lg '>
+                          <li className='text-justify p-2  text-xl'>
                             {i.description}
                           </li>
                             </>
@@ -61,7 +61,7 @@ const OrganizationsColleague = () => {
         </div>
     
         <div className="md:hidden mt-40 w-full h-screen flex flex-col items-center justify-center rtl  ">
-        <section className='font-bold text-lg'>دستگاه های همکار</section>
+        <section className='font-bold text-lg'>دستگاه های همکار در وضعیت مخاطره آمیز {Organizations.name}</section>
         {Organizations.OrganizationsColleague.map((i) => {
               return <>
                <div className='w-[90%] m-5 flex flex-col p-2 border-2 border-[#105251] rounded-2xl'>

@@ -16,13 +16,17 @@ import MainPage from "./conponents/MainPage.js";
 import Definitions from "./conponents/Definitions.js";
 import Layout from "./Layout.js";
 import Background from "./Background.js";
+import Recognition from "./conponents/Recognition.js";
+import RecognitionStart from './conponents/RecognitionStart.js';
 function App() {
   return (
     <>
       <Routes>
       {/* <Route index element={} /> */}
         <Route path="/" element={<Layout />}>
-            <Route index element={<Background />} />
+          <Route index element={<Background />} />
+          <Route path="/recognition" element={<Recognition />} />
+          <Route path="/recognition/start" element={<RecognitionStart/>}/>
             <Route path="/conditions" element={<Conditions />} />
           <Route path="/definitions" element={<Definitions />} />
           <Route path="/conditions/:id" element={<Condition />} />
