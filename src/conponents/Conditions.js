@@ -1,7 +1,7 @@
 import React from "react";
 import list from "../db.js";
 import { Link,useLocation } from "react-router-dom";
-const Conditions = (props) => {
+const Conditions = () => {
   const location = useLocation()
   console.log(location)
   // console.log(Value)
@@ -33,7 +33,9 @@ const Conditions = (props) => {
       </div> */}
           <div className="hidden md:flex w-full  flex-wrap rtl">
 
-{list.map((i) => {
+        {
+          location.state?
+          list.map((i) => {
   // console.log(i.icon)
   return <>
     {/* <div>{Value}</div> */}
@@ -60,38 +62,77 @@ const Conditions = (props) => {
       {i.name}
       </div>
     
-    </div>
+      </div>
+   
     }
-   {/* <div className="m-97 p-98 w-99 shadow-xl rounded-2xl border-2 border-[#105251] cursor-pointer hover: hover:shadow-slate-700">
-         <div className="flex items-center">
-         <img src={i.icon} alt="" />
-         </div>
-         <div className="font-Vazirmatn h-12 text-center font-bold text-xl mt-2 hover:text-[#105251]">
-           {i.name}
-           </div>
-         
-         </div> */}
+   
   </>
-})}
+          })
+          :
+              list.map((i) => {
+                return <>
+                 <Link to={`/conditions/${i.id}`}>
+          <div className="m-97 p-98 w-99 shadow-xl rounded-2xl border-2 border-[#105251] cursor-pointer hover: hover:shadow-slate-700">
+          <div className="flex items-center">
+          <img src={i.icon} alt="" />
+          </div>
+          <div className="font-Vazirmatn h-12 text-center font-bold text-xl mt-2 hover:text-[#105251]">
+            {i.name}
+            </div>
+          
+          </div>
+          </Link>
+                
+                </>
+            })}
+        
 </div>
 <div className="md:hidden  w-full  flex flex-col justify-between">
 {     
         <div className="  grid grid-cols-2 gap-3  rtl items-center justify-center overflow-auto ">
           {
-            
+            location.state?
             list.map((item) => {
             return (
               <>
+                {item.name === location.state.Value ?
                 <Link to={`/conditions/${item.id}`} key={item.id}>
-                  <button className="border-2 border-[#105251] font-Vazirmatn text-xl font-bold text-center text-[#213555] rounded-3xl mr-3 w-[90%] 
+                <button className="border-2 border-[#105251] font-Vazirmatn text-xl font-bold text-center text-[#213555] rounded-3xl mr-3 w-[90%] 
+              h-60 mt-5 items-center flex justify-center flex-col cursor-pointer" key={item.id}>
+                <img src={item.icon} alt="" className=" h-44 p-4 rounded-3xl object-cover"/>
+                  {item.name}
+              </button>
+                  </Link>
+                  :
+                  // <Link to={`/conditions/${item.id}`} key={item.id}>
+                  <button className="border-2  border-white font-Vazirmatn text-xl font-bold text-center text-gray-400 rounded-3xl mr-3 w-[90%] 
                 h-60 mt-5 items-center flex justify-center flex-col cursor-pointer" key={item.id}>
-                  <img src={item.icon} alt="" className=" h-44 p-4 rounded-3xl object-cover"/>
+                  <img src={item.icon2} alt="" className=" h-44 p-4 rounded-3xl object-cover"/>
                     {item.name}
                 </button>
-                </Link>
+                // </Link>
+              
+              
+              }
+                
               </>
             );
             })
+                :
+                list.map((item) => {
+                  return (
+                    <>
+                      <Link to={`/conditions/${item.id}`} key={item.id}>
+                        <button className="border-2 border-[#105251] font-Vazirmatn text-xl font-bold text-center text-[#213555] rounded-3xl mr-3 w-[90%] 
+                      h-60 mt-5 items-center flex justify-center flex-col cursor-pointer" key={item.id}>
+                        <img src={item.icon} alt="" className=" h-44 p-4 rounded-3xl object-cover"/>
+                          {item.name}
+                      </button>
+                      </Link>
+                    </>
+                  );
+                  })
+
           }
         </div> }
       </div>

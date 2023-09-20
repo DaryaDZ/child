@@ -192,8 +192,8 @@ const Background = () => {
            hover:bg-[#F0F0F0] hover:font-bold
            hover:text-[#105251] border-[#105251] text-center">
         
-                وضعیت های مخاطره آمیز
-              </Link>
+مدل سازی فاز شناسایی چهارده وضعیت مخاطره آمیز
+            </Link>
           </div>
         </div>
         <div className="flex-1  items-center justify-center flex ">

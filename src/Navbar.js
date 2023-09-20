@@ -138,7 +138,7 @@ const Navbar = () => {
               <GiOpenBook style={{ color: "#105251", marginLeft: "5" }} />
             </li>
           </Link>
-          <Link to="/recognition">
+          <Link to="/conditions">
             <li className="m-3 list-none cursor-pointer flex items-center justify-center hover:border-b-2 border-b-[#105251] ">
               وضعیت های مخاطره آمیز
               <MdOutlineDangerous
